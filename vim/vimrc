@@ -1,0 +1,123 @@
+ " Misc {{{
+
+set nocompatible    " use Vim settings, rather then Vi settings
+set lazyredraw      " redraw only when we need to
+
+syntax on               " Enable syntax highlighting
+colorscheme desert      " Set nice looking colorscheme
+"colorscheme badwolf     " Set nice looking colorscheme
+
+" Remember last position in file
+"if has("autocmd")
+"  autocmd BufReadPost *
+"    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+"    \   exe "normal g`\"" |
+"    \ endif
+"endif
+
+"}}}
+" UI Layout {{{
+set showcmd         " show command in bottom bar
+set number          " show line numbers
+set cursorline      " highlight current line
+
+set wildmenu        " visual autocomplete for command menu
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
+
+set showmatch       " highlight matching [{()}]
+
+" Status line
+set laststatus=2        " show status line
+set statusline=%t       " tail of the filename
+set statusline+=%{&ff}  " file format
+set statusline+=%h      " help file flag
+set statusline+=%m      " modified flag
+set statusline+=%r      " read-only flag
+set statusline+=%y      " file type
+set statusline+=%c,     " cursor column
+set statusline+=%l/%L   " cursor line/total lines
+set statusline+=\ %P    " percent through file
+" }}}
+" Tabs and Spaces {{{
+set tabstop=4       " number of visual spaces per TAB
+set softtabstop=4   " number of spaces in tab when editing
+set expandtab       " tabs are spaces
+set et              " expand tabs into spaces
+
+set list listchars=tab:→\ ,trail:▸
+
+autocmd FileType c,cpp,java,xml,php
+autocmd BufWritePre <buffer> %s/\s\+$//e
+
+filetype indent on  " load filetype-specific indent fileset cursorline
+"}}}
+" Searching {{{
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+set ignorecase          " Do case insensitive matching
+set smartcase           " do not ignore if search pattern has CAPS
+
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+"}}}
+" Folding {{{
+set foldenable          " enable folding
+set foldlevelstart=10   " open most folds by default
+set foldnestmax=10      " 10 nested fold max
+set foldmethod=indent   " fold based on indent level
+
+" space open/closes folds
+nnoremap <space> za
+"}}}
+" Key Mappings {{{
+
+
+" move vertical by visual line
+nnoremap j gj
+nnoremap k gk
+
+" enable simple escape
+inoremap jk <esc>
+" }}}
+" Backup {{{
+set backup
+silent !mkdir -vp ~/.backup/vim/undo/ > /dev/null 2>&1
+set backupdir=~/.backup/vim,.       " list of directories for the backup file
+set directory=~/.backup/vim,~/tmp,. " list of directory names for the swap file
+set undofile
+set undodir=~/.backup/vim/undo/,~/tmp,.
+"}}}
+
+"Vundles {{{
+" Install vundle if not already installed
+if has("user_commands")
+  " Setting up Vundle - the vim plugin bundler
+  let VundleInstalled=0
+  let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+  if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    let VundleInstalled=1
+  endif
+endif
+
+if has("user_commands")
+  set nocompatible
+  filetype off
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+  "let g:vundles=['general', 'git', 'hg', 'programming', 'completion', 'ruby', 'python', 'misc']
+  let g:vundles=['general', 'git', 'html'] ", 'completion' ] ", 'programming' ]
+""  let g:neocomplcache_enable_at_startup = 1
+  " Load 'vundles'
+  source ~/.vim/vundles.vim
+  " Add extra bundles here...
+  " Bundle 'reponame'
+endif
+"}}}
+
+set modelines=1     " local config from last line
+" vim:foldmethod=marker:foldlevel=0
