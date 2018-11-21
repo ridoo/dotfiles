@@ -1,0 +1,30 @@
+[user]
+    name = Henning Bredel
+    email = bredel@52north.org
+    signingkey = 731F1541
+    editor = Henning Bredel
+[alias]
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    co = checkout
+    ci = commit
+    sts = stash save
+    stp = stash pop
+    fa = fetch --all
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+[pager]
+    log = less -F -X
+    show = less -F -X
+    diff = less -F -X
+[merge]
+    tool = meld
+[core]
+    excludesfile = ~/.gitignore
+[commit]
+    template = ~/.gitmessage
+[cola]
+    spellcheck = false
