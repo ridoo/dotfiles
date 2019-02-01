@@ -86,6 +86,8 @@ nnoremap <space> za
 "}}}
 " Key Mappings {{{
 
+" Allow backspace to delete any char
+set backspace=indent,eol,start
 
 " move vertical by visual line
 nnoremap j gj
