@@ -7,8 +7,10 @@
     excludesfile = ~/.gitignore
     editor = vim
 [alias]
-        lol = log --graph --decorate --pretty=oneline --abbrev-commit
-        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    lg = log --graph --decorat --pretty=oneline --date=relative
+    stat = diff --stat
     co = checkout
     ci = commit
     sts = stash save
