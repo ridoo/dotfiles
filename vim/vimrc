@@ -45,13 +45,17 @@ set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 set et              " expand tabs into spaces
+set autoindent      " indent on new lines
 
 set list listchars=tab:→\ ,trail:▸
 
 autocmd FileType c,cpp,java,xml,php
 autocmd BufWritePre <buffer> %s/\s\+$//e
 
-filetype indent on  " load filetype-specific indent fileset cursorline
+filetype indent on          " load filetype-specific indent fileset cursorline
+"}}}
+" Format Options {{{
+set formatoptions=cqrt  " format according to :h fo-table
 "}}}
 " Searching {{{
 set incsearch           " search as characters are entered
