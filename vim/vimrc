@@ -15,6 +15,8 @@ colorscheme desert      " Set nice looking colorscheme
 "    \ endif
 "endif
 
+" write via sudo with :W
+com! W w<bang> !sudo tee % > /dev/null
 "}}}
 " UI Layout {{{
 set showcmd         " show command in bottom bar
