@@ -103,7 +103,16 @@ set undofile
 set undodir=~/.backup/vim/undo/,~/tmp,.
 "}}}
 
-"Vundles {{{
+" LaTeX Suite {{{
+
+set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+filetype plugin indent on
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor = "latex"
+
+"}}}
+" Vundles {{{
+
 " Install vundle if not already installed
 if has("user_commands")
   " Setting up Vundle - the vim plugin bundler
