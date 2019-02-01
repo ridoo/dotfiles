@@ -1,4 +1,4 @@
- " Misc {{{
+" Misc {{{
 
 set nocompatible    " use Vim settings, rather then Vi settings
 set lazyredraw      " redraw only when we need to
@@ -79,7 +79,7 @@ nnoremap k gk
 
 " enable simple escape
 inoremap jk <esc>
-" }}}
+"}}}
 " Backup {{{
 set backup
 silent !mkdir -vp ~/.backup/vim/undo/ > /dev/null 2>&1
