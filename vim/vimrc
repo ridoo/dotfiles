@@ -67,6 +67,14 @@ set smartcase           " do not ignore if search pattern has CAPS
 nnoremap <leader><space> :nohlsearch<CR>
 
 "}}}
+" Navigating {{{
+
+" Navigate windows using c-hjkl
+noremap <C-J> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+"}}}
 " Folding {{{
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
