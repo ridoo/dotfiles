@@ -41,6 +41,8 @@
     diff = less -F -X
 [merge]
     tool = meld
+[rerere]
+    enabled = true
 [commit]
     template = ~/.gitmessage
 [cola]
