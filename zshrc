@@ -71,6 +71,10 @@ plugins=(
   ssh-agent
 )
 
+zstyle :omz:plugins:ssh-agent identities id_rsa
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent lifetime 4h
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
