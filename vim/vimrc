@@ -116,32 +116,32 @@ let g:tex_flavor = "latex"
 " Vundles {{{
 
 " Install vundle if not already installed
-if has("user_commands")
-  " Setting up Vundle - the vim plugin bundler
-  let VundleInstalled=0
-  let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-  if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    let VundleInstalled=1
-  endif
-endif
+""if has("user_commands")
+""  " Setting up Vundle - the vim plugin bundler
+""  let VundleInstalled=0
+""  let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+""  if !filereadable(vundle_readme)
+""    echo "Installing Vundle.."
+""    echo ""
+""    silent !mkdir -p ~/.vim/bundle
+""    silent !git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+""    let VundleInstalled=1
+""  endif
+""endif
 
-if has("user_commands")
-  set nocompatible
-  filetype off
-  set rtp+=~/.vim/bundle/vundle/
-  call vundle#rc()
-  "let g:vundles=['general', 'git', 'hg', 'programming', 'completion', 'ruby', 'python', 'misc']
-  let g:vundles=['general', 'git', 'html'] ", 'completion' ] ", 'programming' ]
+""if has("user_commands")
+""  set nocompatible
+""  filetype off
+""  set rtp+=~/.vim/bundle/vundle/
+""  call vundle#rc()
+""  "let g:vundles=['general', 'git', 'hg', 'programming', 'completion', 'ruby', 'python', 'misc']
+""  let g:vundles=['general', 'git', 'html'] ", 'completion' ] ", 'programming' ]
 ""  let g:neocomplcache_enable_at_startup = 1
-  " Load 'vundles'
-  source ~/.vim/vundles.vim
-  " Add extra bundles here...
-  " Bundle 'reponame'
-endif
+""  " Load 'vundles'
+""  source ~/.vim/vundles.vim
+""  " Add extra bundles here...
+""  " Bundle 'reponame'
+""endif
 "}}}
 
 set modelines=1     " local config from last line

@@ -29,7 +29,7 @@ if count(g:vundles, 'general')
   Bundle 'mhinz/vim-signify'
   Bundle 'Raimondi/delimitMate'
   ""Bundle 'bling/vim-airline'
-  Bundle 'rodjek/vim-puppet'
+  ""Bundle 'rodjek/vim-puppet'
 endif
 
 if count(g:vundles, 'git')
