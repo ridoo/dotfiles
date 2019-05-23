@@ -3,6 +3,8 @@
 set nocompatible    " use Vim settings, rather then Vi settings
 set lazyredraw      " redraw only when we need to
 
+set clipboard^=unnamed,unnamedplus " Sync + and * clipboards
+
 syntax on               " Enable syntax highlighting
 colorscheme desert      " Set nice looking colorscheme
 "colorscheme badwolf     " Set nice looking colorscheme
