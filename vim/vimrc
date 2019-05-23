@@ -6,8 +6,7 @@ set lazyredraw      " redraw only when we need to
 set clipboard^=unnamed,unnamedplus " Sync + and * clipboards
 
 syntax on               " Enable syntax highlighting
-colorscheme desert      " Set nice looking colorscheme
-"colorscheme badwolf     " Set nice looking colorscheme
+colorscheme ron         " Set nice looking colorscheme
 
 " Remember last position in file
 "if has("autocmd")
