@@ -118,3 +118,5 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 alias l="ls -la"
 alias e="exa -la"
 alias y=yay
+alias vim.java="vim - -c 'set syntax=java'"
+alias vim.py="vim - -c 'set syntax=python'"
